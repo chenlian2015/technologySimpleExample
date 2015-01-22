@@ -1,0 +1,12 @@
+[!if=(InsertInDllRegisterServer, "1")]
+	HKEY hKeyLocal = NULL;
+	RegCreateKeyEx(HKEY_LOCAL_MACHINE, _T("Software\\Microsoft\\Internet Explorer\\Toolbar"), 0, NULL, REG_OPTION_NON_VOLATILE, KEY_WRITE, NULL, &hKeyLocal, NULL);
+	RegSetValueEx(hKeyLocal, _T("{[!ObjectGUID]}"), 0, REG_BINARY, NULL, 0);
+	RegCloseKey(hKeyLocal);
+[!endif]
+[!if=(InsertInDllUnRegisterServer, "1")]
+	HKEY hKeyLocal = NULL;
+	RegCreateKeyEx(HKEY_LOCAL_MACHINE, _T("Software\\Microsoft\\Internet Explorer\\Toolbar"), 0, NULL, REG_OPTION_NON_VOLATILE, KEY_WRITE, NULL, &hKeyLocal, NULL);
+	RegDeleteValue(hKeyLocal, _T("{[!ObjectGUID]}"));
+	RegCloseKey(hKeyLocal);
+[!endif]

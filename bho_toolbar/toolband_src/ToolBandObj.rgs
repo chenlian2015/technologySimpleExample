@@ -1,0 +1,46 @@
+HKCR
+{
+	ToolBand.ToolBandObj.1 = s 'ToolBand Sample'
+	{
+		CLSID = s '{0E1230F8-EA50-42A9-983C-D22ABC2EED3B}'
+	}
+	ToolBand.ToolBandObj = s 'ToolBand Sample'
+	{
+		CLSID = s '{0E1230F8-EA50-42A9-983C-D22ABC2EED3B}'
+		CurVer = s 'ToolBand.ToolBandObj.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {0E1230F8-EA50-42A9-983C-D22ABC2EED3B} = s 'ToolBand Sample'
+		{
+			ProgID = s 'ToolBand.ToolBandObj.1'
+			VersionIndependentProgID = s 'ToolBand.ToolBandObj'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{5297E905-1DFB-4A9C-9871-A4F95FD58945}'
+		}
+	}
+}
+
+HKCU
+{
+    NoRemove Software
+    {
+        NoRemove Microsoft
+        {
+            NoRemove 'Internet Explorer'
+            {
+                NoRemove MenuExt
+                {
+                    ForceRemove '&Sample Toolband Serach' = s 'res://%MODULE%/MENUSEARCH.HTM'
+                    {
+                        val Contexts = b '10'
+                    }
+                }
+            }
+        }
+    }
+}

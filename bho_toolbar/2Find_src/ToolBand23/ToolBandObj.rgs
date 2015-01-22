@@ -1,0 +1,26 @@
+HKCR
+{
+	Pugi.PugiObj.1 = s 'Sample Toolbar'
+	{
+		CLSID = s '{5F1ABCDB-A875-46c1-8345-B72A4567E486}'
+	}
+	Pugi.PugiObj = s 'Sample Toolbar'
+	{
+		CLSID = s '{5F1ABCDB-A875-46c1-8345-B72A4567E486}'
+		CurVer = s 'Pugi.PugiObj.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {5F1ABCDB-A875-46c1-8345-B72A4567E486} = s 'Sample Toolbar'
+		{
+			ProgID = s 'Pugi.PugiObj.1'
+			VersionIndependentProgID = s 'Pugi.PugiObj'
+			ForceRemove 'Programmable'	 
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{6D3F5DE4-E980-4407-A10F-9AC771ABAAE6}'
+		}
+	}
+}

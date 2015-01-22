@@ -1,0 +1,40 @@
+// ToolBand.idl : IDL source for ToolBand.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ToolBand.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[
+		object,
+		uuid(95B92D92-8B7D-4A19-A3F1-43113B4DBCAF),
+		dual,
+		helpstring("IToolBandObj Interface"),
+		pointer_default(unique)
+	]
+	interface IToolBandObj : IDispatch
+	{
+	};
+
+[
+	uuid(5297E905-1DFB-4A9C-9871-A4F95FD58945),
+	version(1.0),
+	helpstring("ToolBand 1.0 Type Library")
+]
+library TOOLBANDLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	[
+		uuid(0E1230F8-EA50-42A9-983C-D22ABC2EED3B),
+		helpstring("ToolBandObj Class")
+	]
+	coclass ToolBandObj
+	{
+		[default] interface IToolBandObj;
+	};
+};

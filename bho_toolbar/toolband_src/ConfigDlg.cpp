@@ -1,0 +1,6 @@
+// ConfigDlg.cpp : Implementation of CConfigDlg
+#include "stdafx.h"
+#include "ConfigDlg.h"
+
+/////////////////////////////////////////////////////////////////////////////
+// CConfigDlg

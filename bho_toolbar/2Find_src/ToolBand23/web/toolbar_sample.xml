@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v5 U (http://www.xmlspy.com) by Mike (AndNow) -->
+<TOOLBAR img="nav.bmp" hot_img="nav_hot.bmp" >
+	<BUTTON caption="" img="" hint="2Find.co.il" command="home">
+		<MENU img="logo.bmp" type="Single">
+			<!-- Single / Split-->
+			<ITEM caption="Code Project" img="7" hint="Code Project.com" command="codeproject"/>
+			<SEPARATOR/>
+			<ITEM caption="Microsoft" img="6" hint="Search Microsoft" command="MicrosoftWeb"/>
+			<ITEM caption="Google" img="8" hint="Search Google" command="GoogleWeb"/>
+			<SEPARATOR/>
+			<ITEM caption="Options..." img="-1" hint="Options..." command="options"/>
+			<ITEM caption="Clear History" img="-1" hint="Clear History" command="clearhistory"/>
+			<ITEM caption="Update" img="-1" hint="Update" command="update"/>
+			<ITEM caption="Uninstall" img="-1" hint="Remove  toolbar from your browser" command="uninstall"/>
+			<SEPARATOR/>
+			<ITEM caption="About" img="-1" hint="Display toolbar version and copyright information " command="about"/>
+		</MENU>
+	</BUTTON>
+	<TEXT caption="1st Param" img="-2" hint="" command=""/>
+	<COMBO caption="" name="s1" hint="input text for search" command="" limit="40" img="-2" histmax="10">
+		<WIDTH>5</WIDTH>
+		<WIDTH>10</WIDTH>
+		<WIDTH>15</WIDTH>
+	</COMBO>
+	<TEXT caption="2nd" img="8" hint="" command=""/>
+	<COMBO caption="" name="s2" hint="input text for search" vis_id="GoogleWeb" limit="40" img="-2" histmax="10">
+		<WIDTH>5</WIDTH>
+		<WIDTH>10</WIDTH>
+		<WIDTH>15</WIDTH>
+		<VALUE display="URL">url</VALUE>
+		<VALUE display="Address">sa</VALUE>
+		<VALUE display="ZIP/Postal Code">ac</VALUE>
+	</COMBO>
+	<BUTTON caption="Search" img="6" hint="Select your Search" command="search">
+		<MENU img="" type="Split">
+			<ITEM caption="Search using Microsoft" hint="Microsoft" command="Microsoft" img="-1"/>
+			<ITEM caption="Search using Google" hint="Google" command="Google" img="-1"/>
+			<ITEM caption="Search using thebig" hint="thebig" command="thebig" img="-1"/>
+			<SEPARATOR/>
+			<ITEM caption="Make Default Search" img="-2" hint="" command="Make Default"/>
+		</MENU>
+	</BUTTON>
+
+	<BUTTON caption="Menu" img="7" hint="Select your Search" command="search">
+		<MENU img="" type="Single">
+			<ITEM caption="Search thebig" hint="thebig" command="thebigWeb" img="7"/>
+			<MENU caption="Sub menu">
+				<ITEM vis_id="MicrosoftWeb" caption="Search Microsoft" hint="Microsoft" command="MicrosoftWeb" img="8"/>
+				<MENU caption="Sub menu2">
+					<ITEM caption="Search Microsoft" hint="Microsoft" command="MicrosoftWeb" img="-1"/>
+				</MENU>
+				<ITEM vis_id="GoogleWeb" caption="Search Google" hint="Google" command="GoogleWeb" img="-1"/>
+			</MENU>
+		</MENU>
+	</BUTTON>
+
+	<BUTTON vis_id="MicrosoftWeb" caption="Microsoft" img="8" hint="Search Microsoft" command="MicrosoftWeb"/>
+	<BUTTON vis_id="GoogleWeb" caption="Google" img="9" hint="Search Google" command="GoogleWeb"/>
+	<BUTTON caption="text" img="" hint="Send mail" command="Send mail">
+		<MENU img="logo.bmp" hot_img="logo2.bmp" type="None">
+		</MENU>
+	</BUTTON>
+	
+	<SEPARATOR vis_id="ShowHighlightButton"/>
+	<BUTTON vis_id="ShowHighlightButton" caption="Highlight" img="7" hint="Highlight text in html document" command="Highlight"/> 
+	<SEPARATOR vis_id="ShowFindButtons"/>
+
+	<COMMANDS>
+		<WEBJUMP name="MicrosoftWeb" href="http://search.microsoft.com/default.asp?qu=%s1" newbrowserwindow="true"/>
+		<WEBJUMP name="GoogleWeb" href="http://google.com/search?q=%s1&amp;more=%s2"/>
+		<WEBJUMP name="thebigWeb" href="thebig.us/cgi-bin/ss/smartsearch.cgi" post="keywords=%s1"/>
+		<WEBJUMP name="codeproject" href="http://www.codeproject.com"/>
+		<WEBJUMP name="index" href="http://127.0.0.1"/>
+		<WEBJUMP name="news" href="http://127.0.0.1/?ty=news"/>
+		<WEBJUMP name="pages" href="http://127.0.0.1/?ty=pages"/>
+		<LOCALHTML name="options" href="options.html" newbrowserwindow="false"/>
+		<LOCALHTML name="about" href="about.html" newbrowserwindow="modaldialog"/>
+		<LOCALHTML name="about" href="logo.gif"/>
+		<LOCALHTML name="about" href="logo2.gif"/>
+		<SPECIAL type="ClearHistory" name="clearhistory"/>
+		<SPECIAL type="Search" name="search"/>
+		<SPECIAL type="Uninstall" name="uninstall"/>
+		<SPECIAL type="Update" name="update"/>
+		<SPECIAL type="Switch to" name="Microsoft" display="S Microsoft"/>
+		<SPECIAL type="Switch to" name="Google" display="S Google"/>
+		<SPECIAL type="Switch to" name="thebig" display="S thebig"/>
+
+		<SPECIAL type="Make Default Toolbar" name="Make Default"/>
+
+		<SHELLEXECUTE name="Send mail" command="mailto:mtscf@microsoft.com?subject=Feedback&amp;body=The%20InetSDK%20Site%20Is%20Superlative" not_found="Can't send email"/>
+
+		<HIGHLIGHT name="Highlight"/>
+	</COMMANDS>
+	<SETTINGS WordFindHint="press to find this text">
+		<CHECKBOX id="scope" default="-1"/>
+		<CHECKBOX id="OpenNew" default="0"/>
+		<CHECKBOX id="AutoComplete"/>
+		<CHECKBOX id="KeepHistory"/>
+		<CHECKBOX id="RunSearchAutomatically"/>
+		<CHECKBOX id="RunSearchDragAutomatically"/>
+		<CHECKBOX id="DescriptiveText"/>
+		<CHECKBOX id="ShowHighlightButton"/>
+		<CHECKBOX id="MicrosoftWeb"/>
+		<CHECKBOX id="GoogleWeb"/>
+		<CHECKBOX id="ShowFindButtons" default="1"/>
+		<CHECKBOX id="UpdateAutomatically" default="0"/>
+		<BUTTON id="StartUpdate" command="update"/>
+		<RADIO name="EditWidths1" default="1">
+			<id>Widths10</id>
+			<id>Widths11</id>
+			<id>Widths12</id>
+		</RADIO>
+		<RADIO name="EditWidths2" default="1">
+			<id>Widths20</id>
+			<id>Widths21</id>
+			<id>Widths22</id>
+		</RADIO>
+		<FONT name="Tahoma" size="13"/>
+		<HIGHLIGHT>
+			<COLOR>F6FF00</COLOR>
+			<COLOR>00FFE4</COLOR>
+			<COLOR>5AFF00</COLOR>
+			<COLOR>0087FF</COLOR>
+			<COLOR>FFCC00</COLOR>
+			<COLOR>FF00F0</COLOR>
+		</HIGHLIGHT>
+	</SETTINGS>
+        <INCLUDEXML>toolbar_sample_ex.xml</INCLUDEXML>
+</TOOLBAR>

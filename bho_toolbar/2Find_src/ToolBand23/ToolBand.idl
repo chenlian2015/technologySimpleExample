@@ -1,0 +1,63 @@
+// Pugi.idl : IDL source for Pugi.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Pugi.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[
+		object,
+		uuid(7B9A715E-9D87-4c21-BF9E-F914F2FA953F),
+		dual,
+		helpstring("IPugiObj Interface"),
+		pointer_default(unique)
+	]
+	interface IPugiObj : IDispatch
+	{
+		[propget, helpstring("version")] HRESULT ver([out,retval] VARIANT* newVal);
+		[propput, helpstring("NID")] HRESULT NID([in] VARIANT newVal);
+	};
+
+	[
+		object,
+		uuid(EAF2CCEE-21A1-4203-9F36-4929FD104D43),
+		dual,
+		helpstring("IContextItem Interface"),
+		pointer_default(unique)
+	]
+	interface IContextItem : IDispatch
+	{
+		[id(1), helpstring("method Run")] HRESULT Run([in] LPDISPATCH pDispatch);
+	};
+
+[
+	uuid(6D3F5DE4-E980-4407-A10F-9AC771ABAAE6),
+	version(1.0),
+	helpstring("Pugi 1.0 Type Library")
+]
+library PugiLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	[
+		uuid(5F1ABCDB-A875-46c1-8345-B72A4567E486),
+		helpstring("PugiObj Class")
+	]
+	coclass PugiObj
+	{
+		[default] interface IPugiObj;
+	};
+
+	[
+		uuid(FC2493D6-A673-49FE-A2EE-EFE03E95C27C),
+		helpstring("ContextItem Class")
+	]
+	coclass ContextItem
+	{
+		[default] interface IContextItem;
+	};
+};

@@ -1,0 +1,9 @@
+[!crlf]
+	[
+		uuid([!ObjectGUID]),
+		helpstring("[!TypeName]")
+	]
+	coclass [!CoClassName]
+	{
+		[default] interface [!InterfaceName];
+	};

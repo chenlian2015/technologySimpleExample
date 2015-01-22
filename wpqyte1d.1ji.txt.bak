@@ -1,0 +1,78 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#	new file:   ThreadMessage/ThreadMessage.sln
+#	new file:   ThreadMessage/ThreadMessage.suo
+#	new file:   ThreadMessage/ThreadMessage/ReadMe.txt
+#	new file:   ThreadMessage/ThreadMessage/Resource.h
+#	new file:   ThreadMessage/ThreadMessage/ThreadMessage.cpp
+#	new file:   ThreadMessage/ThreadMessage/ThreadMessage.h
+#	new file:   ThreadMessage/ThreadMessage/ThreadMessage.ico
+#	new file:   ThreadMessage/ThreadMessage/ThreadMessage.rc
+#	new file:   ThreadMessage/ThreadMessage/ThreadMessage.vcxproj.filters
+#	new file:   ThreadMessage/ThreadMessage/ThreadMessage.vcxproj.user
+#	new file:   ThreadMessage/ThreadMessage/small.ico
+#	new file:   ThreadMessage/ThreadMessage/stdafx.cpp
+#	new file:   ThreadMessage/ThreadMessage/stdafx.h
+#	new file:   ThreadMessage/ThreadMessage/targetver.h
+#	new file:   parentchild/child/ReadMe.txt
+#	new file:   parentchild/child/Resource.h
+#	new file:   parentchild/child/child.cpp
+#	new file:   parentchild/child/child.h
+#	new file:   parentchild/child/child.ico
+#	new file:   parentchild/child/child.rc
+#	new file:   parentchild/child/child.vcxproj
+#	new file:   parentchild/child/child.vcxproj.filters
+#	new file:   parentchild/child/child.vcxproj.user
+#	new file:   parentchild/child/parentchild
+#	new file:   parentchild/child/small.ico
+#	new file:   parentchild/child/stdafx.cpp
+#	new file:   parentchild/child/stdafx.h
+#	new file:   parentchild/child/targetver.h
+#	new file:   parentchild/include/include.h
+#	new file:   parentchild/parent.sln
+#	new file:   parentchild/parent.suo
+#	new file:   parentchild/parent/ProcessTool.cpp
+#	new file:   parentchild/parent/ProcessTool.h
+#	new file:   parentchild/parent/ReadMe.txt
+#	new file:   parentchild/parent/Resource.h
+#	new file:   parentchild/parent/parent.aps
+#	new file:   parentchild/parent/parent.cpp
+#	new file:   parentchild/parent/parent.h
+#	new file:   parentchild/parent/parent.ico
+#	new file:   parentchild/parent/parent.rc
+#	new file:   parentchild/parent/parent.vcxproj
+#	new file:   parentchild/parent/parent.vcxproj.filters
+#	new file:   parentchild/parent/parent.vcxproj.user
+#	new file:   parentchild/parent/parentchild
+#	new file:   parentchild/parent/small.ico
+#	new file:   parentchild/parent/stdafx.cpp
+#	new file:   parentchild/parent/stdafx.h
+#	new file:   parentchild/parent/targetver.h
+#	new file:   parentchild/processCommunciation/ReadMe.txt
+#	new file:   parentchild/processCommunciation/processCommunciation.vcxproj
+#	new file:   parentchild/processCommunciation/processCommunciation.vcxproj.filters
+#	new file:   parentchild/processCommunciation/processCommunciation.vcxproj.user
+#	new file:   parentchild/processCommunciation/stdafx.cpp
+#	new file:   parentchild/processCommunciation/stdafx.h
+#	new file:   parentchild/processCommunciation/targetver.h
+#	new file:   parentchild/test/ReadMe.txt
+#	new file:   parentchild/test/resource.h
+#	new file:   parentchild/test/small.ico
+#	new file:   parentchild/test/stdafx.cpp
+#	new file:   parentchild/test/stdafx.h
+#	new file:   parentchild/test/targetver.h
+#	new file:   parentchild/test/test.aps
+#	new file:   parentchild/test/test.cpp
+#	new file:   parentchild/test/test.h
+#	new file:   parentchild/test/test.ico
+#	new file:   parentchild/test/test.rc
+#	new file:   parentchild/test/test.vcxproj
+#	new file:   parentchild/test/test.vcxproj.filters
+#
+

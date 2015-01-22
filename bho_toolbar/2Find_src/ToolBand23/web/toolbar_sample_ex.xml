@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v5 U (http://www.xmlspy.com) by Mike (AndNow) -->
+<TOOLBAR img="nav.bmp">
+    <PAGE url="http://www.praize.com/cgi-bin/members/cforums.cgi?forumid=10228245326057" img="-2" caption="Page"/>
+	<TICKER caption="Ticker">
+		<tickerstyle font="Tahoma" fontsize="12" textcolor="65025" speed="0.1" border="3" bordercolor="16711680" background="255" width="70" height="16"></tickerstyle>
+		<tickeritem command="MicrosoftWeb" delay="0.5" >Microsoft Web</tickeritem>
+		<tickeritem command="uninstall" delay="1.0" >Uninstall</tickeritem>
+		<tickeritem command="thebigWeb">thebig Web- Java applets</tickeritem>
+		<tickeritem command="Send mail">Send mail long long long string </tickeritem>
+	</TICKER>
+</TOOLBAR>

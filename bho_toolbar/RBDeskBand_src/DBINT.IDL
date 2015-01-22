@@ -1,0 +1,11 @@
+[!crlf]
+	[
+		object,
+		uuid([!InterfaceGUID]),
+		dual,
+		helpstring("[!InterfaceName] Interface"),
+		pointer_default(unique)
+	]
+	interface [!InterfaceName] : IDispatch
+	{
+	};

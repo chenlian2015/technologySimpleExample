@@ -1,0 +1,9 @@
+<SCRIPT language="VBScript">    
+    On Error Resume Next    
+    Set MyObj=CreateObject("GoRSDN.ContextItem")        
+    IF Err<>0 Then
+        MsgBox("Модуль GoRSDN не установлен!")
+    ELSE        
+        MyObj.Run external.menuArguments
+    END IF
+</SCRIPT>
