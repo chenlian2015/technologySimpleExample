@@ -100,7 +100,7 @@ BOOL CToolBandObj::RegisterAndCreateWindow()
     
     // Now we can create the Tool Bar, using the Invisible Child
     DWORD dStyle = WS_CHILD | WS_VISIBLE | WS_CLIPCHILDREN | WS_CLIPSIBLINGS | WS_TABSTOP | 
-    CCS_TOP | CCS_NODIVIDER | CCS_NORESIZE | CCS_NOPARENTALIGN | 
+     CCS_NODIVIDER | CCS_NORESIZE | 
     TBSTYLE_TOOLTIPS | TBSTYLE_FLAT | TBSTYLE_TRANSPARENT;
 
     HWND hWnd = m_wndToolBar.CreateSimpleToolBarCtrl(hWndChild, IDR_TOOLBAR_TEST, FALSE, dStyle); 
@@ -110,27 +110,10 @@ BOOL CToolBandObj::RegisterAndCreateWindow()
     if (m_pWebBrowser)
     {
         m_wndToolBar.SetWebBrowser(m_pWebBrowser);
-
         // Call this after you get a valid WebBrowser
         m_wndToolBar.SetBandRebar();
     }
 
-    
-    // Disable the Red and Green buttons
-    int nState = m_wndToolBar.GetState(ID_BUTTON_RED);
-    if (nState != -1)
-        m_wndToolBar.SetState(ID_BUTTON_RED, nState & ~TBSTATE_ENABLED);
-
-    nState = m_wndToolBar.GetState(ID_BUTTON_GREEN);
-    if (nState != -1)
-        m_wndToolBar.SetState(ID_BUTTON_GREEN, nState & ~TBSTATE_ENABLED);
-	
-    TBBUTTONINFO tbi;			
-    tbi.cbSize = sizeof(TBBUTTONINFO);
-	tbi.dwMask = TBIF_STYLE;
-	tbi.fsStyle = TBSTYLE_SEP;
-	//tbi.cx = (unsigned short)EDIT_WIDTH;
-    m_wndToolBar.SetButtonInfo(ID_EDIT_BOX, &tbi);
           
     m_wndToolBar.m_ctlBandComboBox.m_pBand = this;
     m_wndToolBar.m_ctlBandComboBox.SetWebBrowser(m_pWebBrowser);
@@ -149,7 +132,7 @@ STDMETHODIMP CToolBandObj::GetBandInfo(DWORD dwBandID, DWORD dwViewMode, DESKBAN
 		if (pdbi->dwMask & DBIM_MINSIZE)
 		{
             pdbi->ptMinSize.x = 20; //sizeBar.cx; //(250)
-			pdbi->ptMinSize.y = 22; // 20
+			pdbi->ptMinSize.y = 42; // 20
 		}
 		if (pdbi->dwMask & DBIM_MAXSIZE)
 		{

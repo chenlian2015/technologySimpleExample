@@ -55,83 +55,27 @@ HWND CBandToolBarCtrl::CreateSimpleToolBarCtrl(HWND hWndParent, UINT nResourceID
 		return NULL;
 	ATLASSERT(pData->wVersion == 1);
 
-	WORD* pItems = pData->items();
-	int nItems = pData->wItemCount + (bInitialSeparator ? 1 : 0);
-	TBBUTTON* pTBBtn = (TBBUTTON*)_alloca(nItems * sizeof(TBBUTTON));
-
-	// set initial separator (half width)
-	if(bInitialSeparator)
-	{
-		pTBBtn[0].iBitmap = 4;
-		pTBBtn[0].idCommand = 0;
-		pTBBtn[0].fsState = 0;
-		pTBBtn[0].fsStyle = TBSTYLE_SEP;
-		pTBBtn[0].dwData = 0;
-		pTBBtn[0].iString = 0;
-	}
-
-	int nBmp = 0;
-	for(int i = 0, j = bInitialSeparator ? 1 : 0; i < pData->wItemCount; i++, j++)
-	{
-		if(pItems[i] != 0)
-		{
-			pTBBtn[j].iBitmap = nBmp++;
-			pTBBtn[j].idCommand = pItems[i];
-			pTBBtn[j].fsState = TBSTATE_ENABLED;
-			pTBBtn[j].fsStyle = TBSTYLE_BUTTON;
-			pTBBtn[j].dwData = 0;
-			pTBBtn[j].iString = 0;
-		}
-		else
-		{
-			pTBBtn[j].iBitmap = 8;
-			pTBBtn[j].idCommand = 0;
-			pTBBtn[j].fsState = 0;
-			pTBBtn[j].fsStyle = TBSTYLE_SEP;
-			pTBBtn[j].dwData = 0;
-			pTBBtn[j].iString = 0;
-		}
-	}
 
     CRect rect(0,0,100,100);
     HWND hWnd = CWindowImpl<CBandToolBarCtrl, CToolBarCtrl>::Create(hWndParent,rect,NULL, dwStyle, dwExStyle, nID);
 
 	::SendMessage(hWnd, TB_BUTTONSTRUCTSIZE, sizeof(TBBUTTON), 0L);
 
-
-	::SendMessage(hWnd, TB_ADDBUTTONS, nItems, (LPARAM)pTBBtn);
-
-
-
-    // Aditional Initialisation can go here
-
-    CClientDC dc(m_hWnd);
-	dc.SelectFont((HFONT) GetStockObject( DEFAULT_GUI_FONT ));		
-	TEXTMETRIC tm;
-	dc.GetTextMetrics(&tm);
-	int cxChar = tm.tmAveCharWidth;
-	int cyChar = tm.tmHeight + tm.tmExternalLeading;
-	int cx = (LF_FACESIZE + 4) * cxChar;
-	int cy = 16 * cyChar;
-    m_ncy = cy;
-
     // Create an Edit Control		
 	RECT rc;
 	rc.left = 0;
-	rc.top = 0;
-    rc.right = rc.left + EDIT_WIDTH;
+	rc.top = 180;
+    rc.right = rc.left + EDIT_WIDTH*3;
 	rc.bottom = COMBO_HEIGHT;//cy;
 
-    m_ctlBandComboBox.Create(m_hWnd, rc, NULL, WS_VSCROLL |CBS_DROPDOWN | WS_CHILD | WS_TABSTOP | WS_VISIBLE | CBS_AUTOHSCROLL);//@@, IDC_TOOLBAREDIT);
+    m_ctlBandComboBox.Create(m_hWnd, rc, NULL, WS_VSCROLL |CBS_DROPDOWN | WS_CHILD |  WS_VISIBLE | CBS_AUTOHSCROLL);//@@, IDC_TOOLBAREDIT);
     m_ctlBandComboBox.InsertHistory();
-
-        
+    
     m_ctlBandComboBox.SetFont((HFONT)GetStockObject( DEFAULT_GUI_FONT ));
     // Register Edit Control for Drag and Drop
 	RegisterDragDrop(m_ctlBandComboBox.m_hWnd,	(LPDROPTARGET)&m_ctlBandComboBox);
 
-
-	
+	rc.top = 0; 
 	rc.left = rc.right + 40;
 	rc.right = rc.left + 70;
 	rc.bottom = COMBO_HEIGHT/4;//cy;
@@ -371,8 +315,9 @@ LRESULT CBandToolBarCtrl::OnSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& 
         // get the button or separator before the edit control
         GetItemRect(SEPARATOR_1, &rcButton);
 		rcEdit.left = rcButton.right;
-		rcEdit.right = rcEdit.left + EDIT_WIDTH;
-        
+		rcEdit.top +=5;
+		rcEdit.right = rcEdit.left + EDIT_WIDTH*3;
+
         // remove the next line if you are using an edit control
         rcEdit.bottom = COMBO_HEIGHT;
 		m_ctlBandComboBox.MoveWindow(rcEdit);
