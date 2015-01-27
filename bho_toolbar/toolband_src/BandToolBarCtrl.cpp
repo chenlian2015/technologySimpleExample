@@ -98,20 +98,10 @@ HWND CBandToolBarCtrl::CreateSimpleToolBarCtrl(HWND hWndParent, UINT nResourceID
 
 	::SendMessage(hWnd, TB_BUTTONSTRUCTSIZE, sizeof(TBBUTTON), 0L);
 
-	TBADDBITMAP tbab;
-	tbab.hInst = hInst;
-	tbab.nID = nResourceID;
-	::SendMessage(hWnd, TB_ADDBITMAP, nBmp, (LPARAM)&tbab);
+
 	::SendMessage(hWnd, TB_ADDBUTTONS, nItems, (LPARAM)pTBBtn);
-	::SendMessage(hWnd, TB_SETBITMAPSIZE, 0, MAKELONG(pData->wWidth, pData->wHeight));
-	::SendMessage(hWnd, TB_SETBUTTONSIZE, 0, MAKELONG(pData->wWidth + 7, pData->wHeight + 7));
-    
-    // Add the caption string
-    AddStrings(_T("&HomePage\0"));
-    AddStrings(_T("\0"));
-    AddStrings(_T("Red\0"));
-    AddStrings(_T("Green\0"));
-    AddStrings(_T("Blue\0"));
+
+
 
     // Aditional Initialisation can go here
 
@@ -127,8 +117,9 @@ HWND CBandToolBarCtrl::CreateSimpleToolBarCtrl(HWND hWndParent, UINT nResourceID
 
     // Create an Edit Control		
 	RECT rc;
-	GetItemRect(EDIT_CONTROL, &rc); 
-    //rc.right = rc.left + EDIT_WIDTH;
+	rc.left = 0;
+	rc.top = 0;
+    rc.right = rc.left + EDIT_WIDTH;
 	rc.bottom = COMBO_HEIGHT;//cy;
 
     m_ctlBandComboBox.Create(m_hWnd, rc, NULL, WS_VSCROLL |CBS_DROPDOWN | WS_CHILD | WS_TABSTOP | WS_VISIBLE | CBS_AUTOHSCROLL);//@@, IDC_TOOLBAREDIT);
@@ -141,9 +132,9 @@ HWND CBandToolBarCtrl::CreateSimpleToolBarCtrl(HWND hWndParent, UINT nResourceID
 
 
 	
-	GetItemRect(RED_BUTTON+4, &rc); 
+	rc.left = rc.right + 40;
 	rc.right = rc.left + 70;
-	rc.bottom = 30;//cy;
+	rc.bottom = COMBO_HEIGHT/4;//cy;
     m_ctlBandEdita.Create(m_hWnd, rc, NULL, WS_CHILD|WS_TABSTOP|WS_VISIBLE|BS_AUTOCHECKBOX, 0, IDC_TOOLBAREDIT);
 	m_ctlBandEdita.SetWindowTextW(L"Google");
 	rc.left = rc.right + 10;
