@@ -95,7 +95,9 @@ public:
 	END_MSG_MAP()
 
 
-    //CBandEditCtrl m_ctlBandEdit;
+    CBandEditCtrl m_ctlBandEdita;
+	CBandEditCtrl m_ctlBandEditb;
+	CBandEditCtrl m_ctlBandEditc;
     CBandComboBoxCtrl m_ctlBandComboBox;
 	CContainedWindow m_RebarContainer;
 	CReBarCtrl m_ctlRebar;

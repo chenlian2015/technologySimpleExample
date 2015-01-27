@@ -41,7 +41,7 @@ protected:
 
 /////////////////////////////////////////////////////////////////////////////
 // CBandEditCtrl
-class CBandEditCtrl : public CWindowImpl<CBandEditCtrl, CEdit>,
+class CBandEditCtrl : public CWindowImpl<CBandEditCtrl, CButton>,
                       public IDropTarget  
 
 {
@@ -64,7 +64,7 @@ public:
 	STDMETHODIMP DragLeave(void);
 	STDMETHODIMP Drop(LPDATAOBJECT, DWORD, POINTL, LPDWORD);
 
-    DECLARE_WND_SUPERCLASS(NULL, TEXT("EDIT"))
+    DECLARE_WND_SUPERCLASS(NULL, TEXT("BUTTON"))
 
 	BEGIN_MSG_MAP(CBandEditCtrl)
         OCM_COMMAND_CODE_HANDLER(EN_SETFOCUS, OnSetFocus)

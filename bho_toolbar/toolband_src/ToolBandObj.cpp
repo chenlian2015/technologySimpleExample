@@ -3,7 +3,7 @@
 //***************************************************************************//
 //                                                                           //
 //  This file was created using the DeskBand ATL Object Wizard 2.0           //
-//  By Erik Thompson © 2001                                                  //
+//  By Erik Thompson ?2001                                                  //
 //  Email questions and comments to erikt@radbytes.com						 //
 //                                                                           //
 //***************************************************************************//
@@ -127,9 +127,9 @@ BOOL CToolBandObj::RegisterAndCreateWindow()
 	
     TBBUTTONINFO tbi;			
     tbi.cbSize = sizeof(TBBUTTONINFO);
-	tbi.dwMask = TBIF_SIZE | TBIF_STYLE;
+	tbi.dwMask = TBIF_STYLE;
 	tbi.fsStyle = TBSTYLE_SEP;
-	tbi.cx = (unsigned short)EDIT_WIDTH;
+	//tbi.cx = (unsigned short)EDIT_WIDTH;
     m_wndToolBar.SetButtonInfo(ID_EDIT_BOX, &tbi);
           
     m_wndToolBar.m_ctlBandComboBox.m_pBand = this;

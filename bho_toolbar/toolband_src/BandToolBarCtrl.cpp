@@ -128,7 +128,7 @@ HWND CBandToolBarCtrl::CreateSimpleToolBarCtrl(HWND hWndParent, UINT nResourceID
     // Create an Edit Control		
 	RECT rc;
 	GetItemRect(EDIT_CONTROL, &rc); 
-    rc.right = rc.left + EDIT_WIDTH;
+    //rc.right = rc.left + EDIT_WIDTH;
 	rc.bottom = COMBO_HEIGHT;//cy;
 
     m_ctlBandComboBox.Create(m_hWnd, rc, NULL, WS_VSCROLL |CBS_DROPDOWN | WS_CHILD | WS_TABSTOP | WS_VISIBLE | CBS_AUTOHSCROLL);//@@, IDC_TOOLBAREDIT);
@@ -139,13 +139,22 @@ HWND CBandToolBarCtrl::CreateSimpleToolBarCtrl(HWND hWndParent, UINT nResourceID
     // Register Edit Control for Drag and Drop
 	RegisterDragDrop(m_ctlBandComboBox.m_hWnd,	(LPDROPTARGET)&m_ctlBandComboBox);
 
-/*    m_ctlBandEdit.Create(m_hWnd, rc, NULL, WS_CHILD|WS_TABSTOP|WS_VISIBLE|ES_WANTRETURN|ES_AUTOHSCROLL, WS_EX_CLIENTEDGE, IDC_TOOLBAREDIT);
 
-    m_ctlBandEdit.SetFont((HFONT)GetStockObject( DEFAULT_GUI_FONT ));
-    // Register Edit Control for Drag and Drop
-	RegisterDragDrop(m_ctlBandEdit.m_hWnd,	(LPDROPTARGET)&m_ctlBandEdit);
-*/
-
+	
+	GetItemRect(RED_BUTTON+4, &rc); 
+	rc.right = rc.left + 70;
+	rc.bottom = 30;//cy;
+    m_ctlBandEdita.Create(m_hWnd, rc, NULL, WS_CHILD|WS_TABSTOP|WS_VISIBLE|BS_AUTOCHECKBOX, 0, IDC_TOOLBAREDIT);
+	m_ctlBandEdita.SetWindowTextW(L"Google");
+	rc.left = rc.right + 10;
+	rc.right = rc.left + 60;
+	m_ctlBandEditb.Create(m_hWnd, rc, NULL, WS_CHILD|WS_TABSTOP|WS_VISIBLE|BS_AUTOCHECKBOX, 0, IDC_TOOLBAREDIT+1);
+	m_ctlBandEditb.SetWindowTextW(L"Bing");
+	rc.left = rc.right + 10;
+	rc.right = rc.left + 60;
+	m_ctlBandEditc.Create(m_hWnd, rc, NULL, WS_CHILD|WS_TABSTOP|WS_VISIBLE|BS_AUTOCHECKBOX, 0, IDC_TOOLBAREDIT+2);
+	m_ctlBandEditc.SetWindowTextW(L"Yahoo");
+	
     UpdateToolBarCtrlType(toTextOnRight);
 
 	return hWnd;
@@ -228,8 +237,8 @@ bool CBandToolBarCtrl::UpdateToolBarCtrlType(TextOptions nTextOption)
     }
     
     // Additional Styles should be set here
-    SetToolBarButtonInfo(ID_BUTTON_BLACK, TBIF_STYLE, TBSTYLE_DROPDOWN | pTBBtn[HOMEPAGE_BUTTON].fsStyle);
-    SetToolBarButtonInfo(ID_BUTTON_BLUE, TBIF_STYLE, BTNS_WHOLEDROPDOWN | pTBBtn[BLUE_BUTTON].fsStyle);
+    //SetToolBarButtonInfo(ID_BUTTON_BLACK, TBIF_STYLE, TBSTYLE_DROPDOWN | pTBBtn[HOMEPAGE_BUTTON].fsStyle);
+    //SetToolBarButtonInfo(ID_BUTTON_BLUE, TBIF_STYLE, BTNS_WHOLEDROPDOWN | pTBBtn[BLUE_BUTTON].fsStyle);
 
     TBBUTTONINFO tbi;			
     tbi.cbSize = sizeof(TBBUTTONINFO);		
@@ -308,11 +317,11 @@ LRESULT CBandToolBarCtrl::OnToolbarDropDown(int /*idCtrl*/, LPNMHDR pnmh, BOOL& 
 	    //b;
 	    ATLASSERT(b);			
 	    tbar.MapWindowPoints(HWND_DESKTOP, (POINT *)&rc, 2);
-			    
+		/*  	    
 	    CMenu menuPopup;
         switch(ptb->iItem)
         {
-        case ID_BUTTON_BLACK :
+       case ID_BUTTON_BLACK :
             menuPopup.LoadMenu(IDR_MENU_POPUP);
             break;
         case ID_BUTTON_BLUE :
@@ -321,7 +330,7 @@ LRESULT CBandToolBarCtrl::OnToolbarDropDown(int /*idCtrl*/, LPNMHDR pnmh, BOOL& 
         };
 
         ::TrackPopupMenu(menuPopup.GetSubMenu(0), TPM_LEFTALIGN | TPM_RIGHTBUTTON, rc.left, rc.bottom, 0, *this, NULL);		
-
+		*/
         bHandled = true;
         return 0;
     }
