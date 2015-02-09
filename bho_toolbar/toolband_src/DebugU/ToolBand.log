@@ -1,0 +1,23 @@
+﻿Build started 2015/1/27 13:58:24.
+     1>Project "E:\back\technologySimpleExample\bho_toolbar\toolband_src\ToolBand.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IE:\OpenSource\WTL75_5333_Final\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D _VC80_UPGRADE=0x0600 /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp".\DebugU/ToolBand.pch" /Fo".\DebugU/" /Fd".\DebugU/vc110.pdb" /Gd /TP /analyze- /errorReport:prompt BandToolBarCtrl.cpp
+         BandToolBarCtrl.cpp
+     1>e:\opensource\wtl75_5333_final\include\atlmisc.h(3424): warning C4996: '_wsplitpath': This function or variable may be unsafe. Consider using _wsplitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(866) : see declaration of '_wsplitpath'
+     1>e:\opensource\wtl75_5333_final\include\atlmisc.h(3489): warning C4996: '_wsplitpath': This function or variable may be unsafe. Consider using _wsplitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(866) : see declaration of '_wsplitpath'
+     1>e:\back\technologysimpleexample\bho_toolbar\toolband_src\bandtoolbarctrl.cpp(298): warning C4244: '=' : conversion from 'double' to 'LONG', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\DebugU/ToolBand.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\ToolBand.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\DebugU/ToolBand.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\DebugU/ToolBand.lib" /MACHINE:X86 /SAFESEH /DLL .\DebugU\ToolBand.res
+         .\DebugU/BandEditCtrl.obj
+         .\DebugU/BandToolBarCtrl.obj
+         .\DebugU/StdAfx.obj
+         .\DebugU/ToolBand.obj
+         .\DebugU/ToolBandObj.obj
+         ToolBand.vcxproj -> E:\back\technologySimpleExample\bho_toolbar\toolband_src\.\DebugU\ToolBand.dll
+     1>Done Building Project "E:\back\technologySimpleExample\bho_toolbar\toolband_src\ToolBand.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.95
